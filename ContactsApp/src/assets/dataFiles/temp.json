@@ -1,0 +1,35 @@
+{
+	"statusCode": 200,
+	"headers": {
+		"Access-Control-Allow-Origin": "*",
+		"Access-Control-Allow-Credentials": true
+	},
+	"body": {
+		"teambroadcasts": [
+			{
+				"startDate": "2018-12-13",
+				"priority": "critical",
+				"message": "GCF application's GCFEODTXR job failed in production. AD team should immediately dial in into the conf call 1-888-888-8888 passcode 000000",
+				"id": 3,
+				"endDate": "2018-12-13",
+				"title": "!!Need immediate attention!! GCF application's GCFEODTXR job failure in production"
+			},
+			{
+				"startDate": "2018-12-13",
+				"priority": "high",
+				"message": "Staff must complete the mandatory AML training as soon as possible. Staff in vacation must call in your team lead to acknowledge.",
+				"id": 4,
+				"endDate": "2018-12-31",
+				"title": "Complete mandatory training "
+			},
+			{
+				"startDate": "2018-12-01",
+				"priority": "low",
+				"message": "GCF application production Release 3 scheduled on Jan 7th 2019. All code should be checked in into R3 branch.",
+				"id": 1,
+				"endDate": "2019-07-01",
+				"title": "GCF Production Release 3 scheduled on Jan 7th 2019"
+			}
+		]
+	}
+}
