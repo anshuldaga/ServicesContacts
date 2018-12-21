@@ -12,7 +12,7 @@ export class TempPage implements OnInit {
 
   listData : string = '';
 
-  memberlist : string = '';
+  memberlist : string = 'temp member';
 
 
   constructor(private http: HttpClient) {
@@ -31,16 +31,27 @@ export class TempPage implements OnInit {
    }
 
   ngOnInit() {
-        console.log("222222" + this.listData);
+
+        console.log("check values:"+this.listData); // when do like this- it only prints obj obj
+        console.log(this.listData); // but like this prints real values
+
+
+
+        //this.http.get('https://api.github.com/users/touch2info')        
+        this.http.get('https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teammembers')
+        .subscribe((response) => console.log(response));
 
         this.http.get('https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teammembers')
         .subscribe((data: Response) => {
         const responseData = data['body']['teamMembers'];
-        
         this.memberlist = responseData;
+        console.log(this.memberlist);
 
         });
-        console.log("*** Memberlist:" + this.memberlist);
+        
+        console.log("*** Memberlist**** :");
+        console.log( this.memberlist);
+        console.log("*** Memberlist END **** :");
 
           
 
