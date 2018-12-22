@@ -14,5 +14,10 @@
     </ion-item>
   </ion-list>
 
-
+  <ion-list *ngFor="let member of memberlist">
+      <ion-item>
+        {{member.name}} <br />
+        {{member.location}}
+      </ion-item>
+    </ion-list>
 </ion-content>

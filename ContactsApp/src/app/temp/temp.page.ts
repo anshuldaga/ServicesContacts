@@ -12,7 +12,7 @@ export class TempPage implements OnInit {
 
   listData : string = '';
 
-  memberlist : string = 'temp member';
+  memberlist : string ;
 
 
   constructor(private http: HttpClient) {
@@ -41,21 +41,33 @@ export class TempPage implements OnInit {
         this.http.get('https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teammembers')
         .subscribe((response) => console.log(response));
 
-        this.http.get('https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teammembers')
+/*         this.http.get('https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teammembers')
         .subscribe((data: Response) => {
         const responseData = data['body']['teamMembers'];
         this.memberlist = responseData;
         console.log(this.memberlist);
 
-        });
+        }); */
+
+
+        let obs = this.http.get('https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teammembers');
+        obs.subscribe((responseData)=> {this.callMethod (responseData)});
+
+
+
         
         console.log("*** Memberlist**** :");
         console.log( this.memberlist);
         console.log("*** Memberlist END **** :");
 
           
-
-
   }
+
+    callMethod(responseData : any)
+    {
+      console.log("inside call method");
+      this.memberlist = responseData['body']['teamMembers'];
+
+    }
 
 }
