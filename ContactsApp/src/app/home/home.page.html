@@ -10,6 +10,9 @@
 
 <ion-content padding>
   Welcome to Home Page!
+
+  Check my stuff: {{dateTimeMmessage}}
+
   <ion-item>
   <ion-input required type="text" placeholder="Username"></ion-input>
   </ion-item>
@@ -18,5 +21,7 @@
   </ion-item>
   <br />
   <ion-button [routerLink]="['/ContactListPage']">Login</ion-button>
+  <br />
+  <ion-button [routerLink]="['/temp']">Temp</ion-button>
 
 </ion-content>

@@ -22,7 +22,7 @@ coverage/
 www/
 node_modules/
 tmp/
-temp/
+
 e2e/
 platforms/
 plugins/
