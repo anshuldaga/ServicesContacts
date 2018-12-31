@@ -1,31 +1,25 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>ContactListPage</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>ContactListPage</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
  I am in contact list page.. 
 
  <ion-button [routerLink]="['/techProfile']">Tech Profile</ion-button>
-
-    <ion-list >
-        <ion-card *ngFor="let tech of techList" >
-            <ion-card-header>
-                <mark><b>{{tech.name}}</b></mark>
-            </ion-card-header>
-            <ion-card-content>                
-                {{tech.location}} <br/>
-                {{tech.role}} <br/>
-                {{tech.phone}} <br/>
-                {{tech.mail}}
-            </ion-card-content>
-        </ion-card>        
+    <ion-list>
+        <ion-item [href]="'/techProfile/' + tech.id" detail="true" *ngFor="let tech of techList">
+            <ion-card>
+                <ion-card-header>
+                    <mark><b>{{tech.name}}</b></mark>
+                </ion-card-header>
+                <ion-card-content>
+                    {{tech.location}} <br />
+                    {{tech.role}} <br />
+                    {{tech.phone}}
+                </ion-card-content>
+            </ion-card>
+        </ion-item>
     </ion-list>
-  
-
-
-
-
-
 </ion-content>

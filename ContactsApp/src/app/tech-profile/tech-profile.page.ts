@@ -23,6 +23,6 @@ constructor(private http: HttpClient) {
 parseResponse(responseData : any){
     this.techList = responseData['body']['teamMembers'];
 
-}
+  }
 }
 
