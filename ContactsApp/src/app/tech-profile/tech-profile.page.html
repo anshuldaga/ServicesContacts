@@ -1,9 +1,59 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>techProfile</ion-title>
+    <ion-title>Tech Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
+<ion-card *ngFor="let tech of techList" >
+
+            <ion-card-header>
+                <mark><b>{{tech.name}}</b></mark>
+            </ion-card-header>
+
+        </ion-card>
+
+  <ion-grid>
+    
+
+    <ion-row>
+      <ion-col size = "7">
+        <ion-card>
+          <ion-card-header>
+            <b>Services:</b> <br/>
+            <ul> 
+              <li> Polishing </li>
+              <li> Mopping </li>
+              <li> Fixing TV </li>
+            </ul>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-img src = "http://en.anti-age-magazine.com/wp-content/uploads/2016/03/merz-homme-web.png"> </ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <b>Company:</b>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <b>Contact Information:</b>
+          </ion-card-header>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
 </ion-content>
+

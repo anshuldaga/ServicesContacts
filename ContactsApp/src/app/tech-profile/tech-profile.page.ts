@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-tech-profile',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TechProfilePage implements OnInit {
 
-  constructor() { }
+private techList : string;
+constructor(private http: HttpClient) {
 
-  ngOnInit() {
   }
 
+  ngOnInit() {
+
+    let obs = this.http.get('https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teammembers');
+        obs.subscribe((responseData)=> {this.parseResponse (responseData)});
+
+  }
+
+parseResponse(responseData : any){
+    this.techList = responseData['body']['teamMembers'];
+
 }
+}
+

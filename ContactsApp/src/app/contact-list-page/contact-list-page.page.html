@@ -5,17 +5,20 @@
 </ion-header>
 
 <ion-content padding>
+ I am in contact list page.. 
 
+ <ion-button [routerLink]="['/techProfile']">Tech Profile</ion-button>
 
     <ion-list >
-        <ion-card *ngFor="let tech of techList">
+        <ion-card *ngFor="let tech of techList" >
             <ion-card-header>
                 <mark><b>{{tech.name}}</b></mark>
             </ion-card-header>
             <ion-card-content>                
                 {{tech.location}} <br/>
                 {{tech.role}} <br/>
-                {{tech.phone}}
+                {{tech.phone}} <br/>
+                {{tech.mail}}
             </ion-card-content>
         </ion-card>        
     </ion-list>
@@ -24,5 +27,5 @@
 
 
 
-<ion-button size="small">Small Button</ion-button>
+
 </ion-content>
