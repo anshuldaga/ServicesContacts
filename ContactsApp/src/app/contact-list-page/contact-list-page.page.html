@@ -1,28 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>ContactListPage</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>ContactListPage</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
 
-    <ion-list >
-        <ion-card *ngFor="let tech of techList">
-            <ion-card-header>
-                <mark><b>{{tech.name}}</b></mark>
-            </ion-card-header>
-            <ion-card-content>                
-                {{tech.location}} <br/>
-                {{tech.role}} <br/>
-                {{tech.phone}}
-            </ion-card-content>
-        </ion-card>        
+    <ion-list>
+        <ion-item [href]="'/techProfile/' + tech.id" detail="true" *ngFor="let tech of techList">
+            <ion-card>
+                <ion-card-header>
+                    <mark><b>{{tech.name}}</b></mark>
+                </ion-card-header>
+                <ion-card-content>
+                    {{tech.location}} <br />
+                    {{tech.role}} <br />
+                    {{tech.phone}}
+                </ion-card-content>
+            </ion-card>
+        </ion-item>
     </ion-list>
-  
 
 
 
 
-<ion-button size="small">Small Button</ion-button>
+
+    <ion-button size="small">Small Button</ion-button>
 </ion-content>
