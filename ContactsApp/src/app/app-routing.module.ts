@@ -7,6 +7,8 @@ const routes: Routes = [
   { path: 'ContactListPage', loadChildren: './contact-list-page/contact-list-page.module#ContactListPagePageModule' },
   { path: 'temp', loadChildren: './temp/temp.module#TempPageModule' },
   { path: 'techProfile/:id', loadChildren: './tech-profile/tech-profile.module#TechProfilePageModule' },
+  { path: 'tech-details/:userId', loadChildren: './tech-details/tech-details.module#TechDetailsPageModule' },
+
 ];
 
 @NgModule({

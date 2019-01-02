@@ -40,7 +40,7 @@ export class ContactListPagePage implements OnInit {
     //this.techProfile = find(this.techList, { 'userid': ('ashishd') });
     var techName = this.techList.find(x=>x.userid == 'ashishd');
     console.log("@@@ check tech profile:");
-    console.log(techName); */
+    console.log(techName); 
     
-  }
+  }*/
 

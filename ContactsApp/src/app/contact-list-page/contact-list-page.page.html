@@ -5,11 +5,9 @@
 </ion-header>
 
 <ion-content padding>
- I am in contact list page.. 
 
- <ion-button [routerLink]="['/techProfile']">Tech Profile</ion-button>
     <ion-list>
-        <ion-item [href]="'/techProfile/' + tech.id" detail="true" *ngFor="let tech of techList">
+        <ion-item [href]="'/tech-details/' + tech.id" detail="true" *ngFor="let tech of techList">
             <ion-card>
                 <ion-card-header>
                     <mark><b>{{tech.name}}</b></mark>
