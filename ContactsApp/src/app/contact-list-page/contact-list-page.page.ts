@@ -31,8 +31,8 @@ export class ContactListPagePage implements OnInit {
     console.log(this.techList);
     var techName = this.techList.find(x=>x.userid == 'ashishd').name;
     console.log("@@@ check tech profile:");
-    console.log(techName); */
-  }
+    console.log(techName); 
+  }*/
 
 /*   getTechDetails(){
     console.log("@@@ inside getTech Detail method");
