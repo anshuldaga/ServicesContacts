@@ -18,7 +18,7 @@ export class ContactListPagePage implements OnInit {
 
   ngOnInit() {
 
-    let obs = this.http.get('https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teammembers');
+    let obs = this.http.get('http://localhost:8081/listUsers');
         obs.subscribe((responseData)=> {this.parseResponse (responseData)});
 
     // this.getTechDetails();

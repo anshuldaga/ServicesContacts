@@ -3,21 +3,36 @@
        "name" : "mahesh",
        "password" : "password1",
        "profession" : "teacher",
-       "id": 1
+       "id": 1,
+       "location": "Tampa",
+       "role": "Manager",
+       "phone": "1234567890",
+       "mail": "mahesh@abc.com",
+       "skills": "Polishing, Plumbing"
     },
     
     {
        "name" : "suresh",
        "password" : "password2",
        "profession" : "librarian",
-       "id": 2
+       "id": 2,
+       "location": "Tampa222",
+       "role": "Manager",
+       "phone": "1234567890",
+        "mail": "mahesh@abc.com",
+       "skills": "Polishing, Plumbing"
     },
     
     {
        "name" : "ramesh",
        "password" : "password3",
        "profession" : "clerk",
-       "id": 3
+       "id": 3,
+       "location": "Tampa333",
+       "role": "Manager",
+       "phone": "1234567890",
+        "mail": "mahesh@abc.com",
+       "skills": "Polishing, Plumbing"
     }
  ]
 }
