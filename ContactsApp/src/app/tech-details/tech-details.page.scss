@@ -1,3 +1,16 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #F5F5F5;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.transparent {
+  background-color: white;
+}
+
 .grid-full ion-row {
   height: 100%;
   padding: 0;
@@ -10,8 +23,21 @@
 }
 
 .border {
-   margin: auto;
    border: solid black;
+   border-radius: 5px;
+}
+
+.bottomborder {
+  border-bottom: solid black;
+
+}
+
+.rightborder {
+  border-right: solid black;
+}
+
+.leftborder {
+  border-left: solid black;
 }
 
 .col img {
@@ -26,7 +52,14 @@
  font-weight: bold;
 }
 
-/*ion-content{
+.capitalize {
+  text-transform: capitalize;
+  font-size: 20px;
+}
 
-    --ion-background-color:#111D12;
-}*/
+.container img.wide {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
