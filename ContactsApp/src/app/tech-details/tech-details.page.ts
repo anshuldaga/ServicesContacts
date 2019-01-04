@@ -47,17 +47,18 @@ export class TechDetailsPage implements OnInit {
   ionViewWillEnter(){
      this.userId  = this.route.snapshot.paramMap.get('userId');
     console.log("got id from url is:"+this.userId);
-    let obs = this.http.get('https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teammembers');
-        obs.subscribe((responseData)=> {this.parseResponse (responseData)});
+    let obs = this.http.get('http://localhost:8081/userDetails/' + this.userId);
+       obs.subscribe((responseData)=> {this.parseResponse (responseData)});
     // this.todo = this.todoService.getTodo(todoId);
   }
 
 
   parseResponse(responseData: Object): any {
-    this.techList = responseData['body']['teamMembers'];
-    this.techDetails = this.techList.find(x=>x.id == this.userId);
+    this.techDetails = responseData;
+    //this.techDetails = this.techList.find(x=>x.id == this.userId);
     console.log("@@ check the tech details info");
     console.log(this.techDetails);
+    
     
 
     // throw new Error("Method not implemented.");
