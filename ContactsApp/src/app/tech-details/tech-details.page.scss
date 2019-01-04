@@ -1,0 +1,32 @@
+.grid-full ion-row {
+  height: 100%;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.header1 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.border {
+   margin: auto;
+   border: solid black;
+}
+
+.col img {
+  height: 100%;
+  width: auto;
+  display: block;
+  margin: auto;
+}
+
+.techname{
+ color: darkblue;
+ font-weight: bold;
+}
+
+/*ion-content{
+
+    --ion-background-color:#111D12;
+}*/

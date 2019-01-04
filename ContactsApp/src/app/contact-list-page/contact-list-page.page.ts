@@ -33,6 +33,7 @@ export class ContactListPagePage implements OnInit {
     console.log("@@@ check tech profile:");
     console.log(techName); */
   }
+}
 
 /*   getTechDetails(){
     console.log("@@@ inside getTech Detail method");

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { CallNumber } from '@ionic-native/call-number/ngx';
+import { ActionSheetController } from '@ionic/angular';
 
 
 
@@ -15,10 +17,32 @@ export class TechDetailsPage implements OnInit {
   private techDetails: string = "default value";
   private userId: string = "";
   
-  constructor(private route: ActivatedRoute,private http: HttpClient) { }
+  constructor(private route: ActivatedRoute,private http: HttpClient, public actionSheetController: ActionSheetController) { }
 
   ngOnInit() {
   }
+
+ async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Albums',
+      buttons: [{
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          console.log('Delete clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+ }
+
+//can't figure out why I am getting an error here for trying to put call function here
+/*this.callNumber.callNumber("18001010101", true)
+  .then(res => console.log('Launched dialer!', res))
+  .catch(err => console.log('Error launching dialer', err));*/
+
+
 
   ionViewWillEnter(){
      this.userId  = this.route.snapshot.paramMap.get('userId');
