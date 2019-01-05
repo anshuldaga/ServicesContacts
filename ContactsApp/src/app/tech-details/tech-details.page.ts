@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { CallNumber } from '@ionic-native/call-number/ngx';
-import { ActionSheetController } from '@ionic/angular';
 
 
 
@@ -17,11 +15,12 @@ export class TechDetailsPage implements OnInit {
   private techDetails: string = "default value";
   private userId: string = "";
   
-  constructor(private route: ActivatedRoute,private http: HttpClient, public actionSheetController: ActionSheetController) { }
+  constructor(private route: ActivatedRoute,private http: HttpClient) { }
 
   ngOnInit() {
   }
 
+ /*
  async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
       header: 'Albums',
@@ -36,7 +35,7 @@ export class TechDetailsPage implements OnInit {
     });
     await actionSheet.present();
  }
-
+*/
 //can't figure out why I am getting an error here for trying to put call function here
 /*this.callNumber.callNumber("18001010101", true)
   .then(res => console.log('Launched dialer!', res))
@@ -54,7 +53,7 @@ export class TechDetailsPage implements OnInit {
 
 
   parseResponse(responseData: Object): any {
-    this.techDetails = responseData;
+    this.techDetails = responseData.stringify;
     //this.techDetails = this.techList.find(x=>x.id == this.userId);
     console.log("@@ check the tech details info");
     console.log(this.techDetails);
