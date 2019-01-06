@@ -1,0 +1,65 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #F5F5F5;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.transparent {
+  background-color: white;
+}
+
+.grid-full ion-row {
+  height: 100%;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.header1 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.border {
+   border: solid black;
+   border-radius: 5px;
+}
+
+.bottomborder {
+  border-bottom: solid black;
+
+}
+
+.rightborder {
+  border-right: solid black;
+}
+
+.leftborder {
+  border-left: solid black;
+}
+
+.col img {
+  height: 100%;
+  width: auto;
+  display: block;
+  margin: auto;
+}
+
+.techname{
+ color: darkblue;
+ font-weight: bold;
+}
+
+.capitalize {
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.container img.wide {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+

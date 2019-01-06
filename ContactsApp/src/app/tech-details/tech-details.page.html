@@ -1,15 +1,81 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>tech-details</ion-title>
+<ion-header align-items-center>
+  <ion-toolbar >
+    <ion-title  class="transparent bold">Technician Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-In tech details page 11.. 
-<br/>
-{{techDetails | json}}
-<br>
+<ion-content >
 
-after for loop <br>
+  <!--<br/> {{techDetails | json}}-->
+
+  <ion-grid class="grid-full">
+
+   <ion-row>
+     <ion-col text-center class="bottomborder capitalize bold" >
+       {{techDetails.name}}
+     </ion-col>
+   </ion-row>
+  
+   <ion-row item-height="5" style="height: 100%" class="bottomborder">
+      
+      <ion-col size = "3" text-center class = "leftborder transparent" >
+        <br/>
+        <br/>
+          Role: <br/>
+          Phone #: <br/>
+          Email:   <br/>
+
+      </ion-col>
+
+      <ion-col text-left size ="4"class="rightborder transparent" >
+        <br/>
+        <br/>
+        {{techDetails.role}} <br/>
+        <a href="tel:{{techDetails.phone}}">{{techDetails.phone}}</a> <br/>
+        <a href="mailto:{{techDetails.mail}}?Subject=Technician%20Inquiry" target="_top">{{techDetails.mail}}</a>
+        <br/>
+
+      </ion-col>  
+    
+        
+      <ion-col size = "5" class="grid" class="rightborder container">
+        <ion-img src = "http://en.anti-age-magazine.com/wp-content/uploads/2016/03/merz-homme-web.png"> </ion-img>
+      </ion-col>
+      
+    </ion-row>
+
+<br/>
+
+    <ion-row>
+      <ion-col>
+        <ion-card class = "border transparent">
+        Services:
+        {{techDetails.skills}} <br/>
+        Placeholder skill <br/>
+        Placeholder skill <br/>
+        Placeholder skill <br/>
+        Placeholder skill <br/>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+<br/>
+<br/>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-card class = "border transparent">
+        Referred by: <br/>
+        Placeholder reference <br/>
+        Placeholder reference <br/>
+        Placeholder reference <br/>
+        Placeholder reference
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+ </ion-grid>
 
 </ion-content>

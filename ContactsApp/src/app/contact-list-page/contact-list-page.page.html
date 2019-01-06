@@ -5,10 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-    Check list without for loop <br>
-    {{techLit}}
-    <br/>
-    for loop abt to start <br>
+
     <ion-list>
         <ion-item [href]="'/tech-details/' + tech.id" detail="true" *ngFor="let tech of techList">
             <ion-card>
@@ -23,10 +20,4 @@
             </ion-card>
         </ion-item>
     </ion-list>
-
-
-
-
-
-    <ion-button size="small">Small Button</ion-button>
 </ion-content>
