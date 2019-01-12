@@ -53,7 +53,7 @@ export class TechDetailsPage implements OnInit {
 
 
   parseResponse(responseData: Object): any {
-    this.techDetails = responseData.stringify;
+    this.techDetails = responseData.toString();
     //this.techDetails = this.techList.find(x=>x.id == this.userId);
     console.log("@@ check the tech details info");
     console.log(this.techDetails);
