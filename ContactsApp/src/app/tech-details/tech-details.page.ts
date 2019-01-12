@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class TechDetailsPage implements OnInit {
 
   private techList: Array<any> = [];
-  private techDetails: string = "default value";
+  private techDetails: Array<any> = [];
   private userId: string = "";
   
   constructor(private route: ActivatedRoute,private http: HttpClient) { }
@@ -52,8 +52,8 @@ export class TechDetailsPage implements OnInit {
   }
 
 
-  parseResponse(responseData: Object): any {
-    this.techDetails = responseData.toString();
+  parseResponse(responseData: any) {
+    this.techDetails = responseData;
     //this.techDetails = this.techList.find(x=>x.id == this.userId);
     console.log("@@ check the tech details info");
     console.log(this.techDetails);
