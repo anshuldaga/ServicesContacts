@@ -11,5 +11,6 @@ var technicianProfileSchema = new Schema({
 
 });
 console.log("@@ inside model ... before export");
-module.exports = mongoose.model('products', technicianProfileSchema);
-//products techContacts
+
+var Contact = module.exports = mongoose.model('tests', technicianProfileSchema);
+//products technicianProfile

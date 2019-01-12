@@ -5,5 +5,4 @@ module.exports = function(app) {
     var techContacts = require('../controllers/techContactsController');
     app.route('/techContacts')
         .get(techContacts.techContactsList)
-        .post(techContacts.addTech);
 };
