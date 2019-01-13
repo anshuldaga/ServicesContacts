@@ -14,8 +14,11 @@ var server = app.listen(8081, function () {
 app.get('/listUsers', function (req, res) {
     console.log("inside listUsers method")
    fs.readFile( '../assets/dataFiles' + "/" + "userData.json", 'utf8', function (err, data) {
+       //function error is when path fails to find data file
+       //whatever is in json file will go into that 'data' variable
       console.log( data );
       res.end( data );
+      //responding that data back to responseData in contactlist.ts
    });
 })
 
