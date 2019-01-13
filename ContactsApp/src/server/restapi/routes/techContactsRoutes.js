@@ -3,6 +3,10 @@
 module.exports = function(app) {
     console.log("@@ inside Router export method");
     var techContacts = require('../controllers/techContactsController');
-    app.route('/techContacts')
-        .get(techContacts.techContactsList)
+    app.route('/testList')
+        .get(techContacts.getTestList);
+    app.route('/prodList')
+        .get(techContacts.getProdList);
+    app.route('/techinfo')
+        .get(techContacts.getTechInfo);
 };

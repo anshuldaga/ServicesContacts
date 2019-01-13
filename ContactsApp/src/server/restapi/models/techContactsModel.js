@@ -12,5 +12,17 @@ var technicianProfileSchema = new Schema({
 });
 console.log("@@ inside model ... before export");
 
-var Contact = module.exports = mongoose.model('tests', technicianProfileSchema);
-//products technicianProfile
+module.exports = mongoose.model('test', technicianProfileSchema);
+
+module.exports = mongoose.model('products', technicianProfileSchema);
+
+var techInfoSchema = new Schema({
+  name: { type: String, Required:  'Tech name cannot be left blank.' }
+});
+
+/* Note: If we don't pass the collection name- by default it add 's' to model name
+in this case it will add 's' as techinfoCHECKs 
+more info here:
+https://stackoverflow.com/questions/10547118/why-does-mongoose-always-add-an-s-to-the-end-of-my-collection-name */
+
+module.exports = mongoose.model('techinfoCHECK', techInfoSchema, 'techinfo');

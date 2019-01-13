@@ -2,7 +2,7 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,
   mongoose = require('mongoose'),
-  TechContactsXXX = require('./restapi/models/techContactsModel'),
+  TechContacts = require('./restapi/models/techContactsModel'),
   bodyParser = require('body-parser');
 
 //var  mongodburi = "mongodb+srv://ashishdaga:aaailu@cluster0-qabk1.mongodb.net/onlinestore";
@@ -11,7 +11,14 @@ mongoose.Promise = global.Promise;
 mongoose.connect(mongodburi);
 
 var db = mongoose.connection;
+//var db = mongoose.connect(mongodburi);
+console.log("@@@ DB related info");
+//console.log(db.tprofile.find());
 
+
+/* console.log(db.getName());
+console.log(db.version());
+ */
 
 
 
