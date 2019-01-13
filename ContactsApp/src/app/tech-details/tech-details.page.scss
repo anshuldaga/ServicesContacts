@@ -11,10 +11,20 @@
   background-color: white;
 }
 
-.grid-full ion-row {
+.grid-full  {
   height: 100%;
-  padding: 0;
-  flex-wrap: wrap;
+  padding: 0px;    
+  border: solid rgb(10, 1, 26);
+}
+
+.leftColumn{
+  width: 70%;
+  border: solid rgb(250, 115, 4);
+}
+
+.rightColumn{
+  width: 30%;
+  border: solid rgb(113, 6, 253);
 }
 
 .header1 {
@@ -23,8 +33,9 @@
 }
 
 .border {
-   border: solid black;
+   border: solid rgb(10, 1, 26);
    border-radius: 5px;
+   padding: 5px;
 }
 
 .bottomborder {
