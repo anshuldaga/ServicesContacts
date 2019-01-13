@@ -12,7 +12,7 @@ mongoose.connect(mongodburi);
 
 var db = mongoose.connection;
 //var db = mongoose.connect(mongodburi);
-console.log("@@@ DB related info");
+//console.log("@@@ DB related info");
 //console.log(db.tprofile.find());
 
 

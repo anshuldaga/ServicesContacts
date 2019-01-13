@@ -25,4 +25,6 @@ in this case it will add 's' as techinfoCHECKs
 more info here:
 https://stackoverflow.com/questions/10547118/why-does-mongoose-always-add-an-s-to-the-end-of-my-collection-name */
 
-module.exports = mongoose.model('techinfoCHECK', techInfoSchema, 'techinfo');
+module.exports = mongoose.model('techlist', techInfoSchema, 'techinfo');
+
+module.exports = mongoose.model('techDetails', techInfoSchema, 'techinfo');

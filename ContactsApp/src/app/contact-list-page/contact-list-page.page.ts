@@ -18,7 +18,7 @@ export class ContactListPagePage implements OnInit {
 
   ngOnInit() {
 //8081 accessing second server that has the backend code which is accessing a specific service (listUsers)
-    let obs = this.http.get('http://localhost:8081/listUsers');
+    let obs = this.http.get('http://localhost:3000/getTechList');
         obs.subscribe((responseData)=> {this.parseResponse (responseData)});
         //parseResponse because it is properly formated json file
 
@@ -27,7 +27,8 @@ export class ContactListPagePage implements OnInit {
   }
   
   parseResponse(responseData : any){
-    this.techList = responseData['body']['teamMembers'];
+    //this.techList = responseData['body']['teamMembers'];
+    this.techList = responseData;
 
 /*     console.log("@@@ in parse response method");
     console.log(this.techList);
