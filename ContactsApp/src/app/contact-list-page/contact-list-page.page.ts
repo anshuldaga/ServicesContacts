@@ -15,6 +15,7 @@ export class ContactListPagePage implements OnInit {
   constructor(private http: HttpClient) {
 
    }
+   
 
   ngOnInit() {
 //8081 accessing second server that has the backend code which is accessing a specific service (listUsers)
