@@ -13,12 +13,13 @@ export class ContactListPagePage implements OnInit {
   private techList : Array<any> = [];
   // private techProfile : string ="default value";
   constructor(private http: HttpClient) {
-
+    console.log("inside constuctor");
    }
 
   ngOnInit() {
+    console.log("inside ngoninit method");
 //8081 accessing second server that has the backend code which is accessing a specific service (listUsers)
-    let obs = this.http.get('http://localhost:3000/getTechList');
+    let obs = this.http.get('http://192.168.1.208:3000/getTechList');
         obs.subscribe((responseData)=> {this.parseResponse (responseData)});
         //parseResponse because it is properly formated json file
 
