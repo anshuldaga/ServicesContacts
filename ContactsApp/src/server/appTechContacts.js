@@ -16,9 +16,6 @@ var db = mongoose.connection;
 //console.log(db.tprofile.find());
 
 
-/* console.log(db.getName());
-console.log(db.version());
- */
 
 
 
