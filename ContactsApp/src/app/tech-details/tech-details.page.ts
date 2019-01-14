@@ -49,6 +49,7 @@ export class TechDetailsPage implements OnInit {
     let obs = this.http.get('http://localhost:3000/getTechDetails/' + this.userId);
        obs.subscribe((responseData)=> {this.parseResponse (responseData)});
     // this.todo = this.todoService.getTodo(todoId);
+    
   }
 
 
