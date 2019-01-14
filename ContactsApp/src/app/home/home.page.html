@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Arbor Greene Contacts
+      Arbor Greene Tech Contacts
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,19 +9,39 @@
 
 
 <ion-content padding>
-  Welcome to Home Page!
-
-  Check my stuff after merge: {{dateTimeMmessage}}
-
+  <ion-item style="align-content: center"><b>Welcome to Home Page!</b></ion-item>
+  <br />
+  {{dateTimeMmessage}}
+  <p>
+    Please enter your user id & password <br />
+  </p>
   <ion-item>
-  <ion-input required type="text" placeholder="Username"></ion-input>
+    <ion-label position="fixed">Username</ion-label>
+    <ion-icon name="contact" color="primary"></ion-icon>
+    <ion-input required type="text" placeholder="Username"></ion-input>
+
   </ion-item>
   <ion-item>
-  <ion-input required type="password" placeholder="Password"></ion-input>
+    <ion-label position="fixed">Password</ion-label>
+    <ion-icon name="key" color="primary"></ion-icon>
+    <ion-input required type="password" placeholder="password"></ion-input>
   </ion-item>
   <br />
-  <ion-button [routerLink]="['/ContactListPage']">Get Contact List</ion-button>
+  <ion-button [routerLink]="['/ContactListPage']">Login</ion-button>
   <br />
-  <ion-button [routerLink]="['/temp']">Temp</ion-button>
+  <p>
+    &nbsp;
+  </p>
+  <p>
+    &nbsp;
+  </p>
+  <p>
+    &nbsp;
+  </p>
+  <br />
+  <!-- <ion-button [routerLink]="['/ContactListPage']">Get Contact List</ion-button> -->
+  <!-- <ion-button [routerLink]="['/temp']">Temp</ion-button> -->
+  <br />
+
 
 </ion-content>

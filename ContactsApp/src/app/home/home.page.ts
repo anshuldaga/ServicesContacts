@@ -12,7 +12,10 @@ export class HomePage {
   constructor()
   {
      console.log("I am in constructor method ");
-     setInterval(()=>this.myMethod(),1000);
+     let currentDtTime = new Date();
+     this.dateTimeMmessage= currentDtTime.toDateString()+" "+currentDtTime.toTimeString();
+     
+     //setInterval(()=>this.myMethod(),1000);
 
 
      //this.myMethod();
@@ -22,7 +25,8 @@ export class HomePage {
   myMethod(){
 
   let currentDtTime = new Date();
-     this.dateTimeMmessage = currentDtTime.toDateString()+ "   "+ currentDtTime.toTimeString();
+     //this.dateTimeMmessage = currentDtTime.toDateString()+ "   "+ currentDtTime.toTimeString();
+     
 
     console.log("I am in my method... ");
   }
