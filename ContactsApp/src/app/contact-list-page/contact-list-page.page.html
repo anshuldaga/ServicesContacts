@@ -6,13 +6,13 @@
 
 <ion-content padding>
     
-    <ion-list>
+    <ion-list style="padding-bottom: 0">
         <ion-item [href]="'/tech-details/' + tech._id" detail="true" *ngFor="let tech of techList">
-            <ion-card style="width: 100%" > 
-                <ion-card-header>
+            <ion-card style="width: 100%; padding: 1"> 
+                <ion-card-header style="padding-left: 2; padding-bottom: 0">
                     <mark><b>{{tech.name}}</b></mark>
                 </ion-card-header>
-                <ion-card-content>
+                <ion-card-content style="padding-left: 3; padding-top: 0" >
                     {{tech.skills}} <br />
                     {{tech.location}} <br />
 <!--                     {{tech.cell}} -->
