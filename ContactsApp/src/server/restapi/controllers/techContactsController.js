@@ -1,12 +1,44 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-TechContacts = mongoose.model('tests');
+TechRecords = mongoose.model('techRecords');
 
-// Import contact model
-//Contact = require('../models/techContactsModel');
+exports.getTechList = function(req, res) {
+  TechRecords.find({}, function(err, techList) {
+    if (err)
+      res.send(err);
 
-//products technicianProfile
+    res.json(techList);
+  });
+};
+
+
+exports.getTechDetails = function(req, res) {
+  
+  var techID = req.params.techID;
+  
+  TechRecords.findById(mongoose.Types.ObjectId(techID), function(err, techDetails) {
+    if (err)
+      res.send(err);
+
+    res.json(techDetails);
+  });
+};
+
+exports.addTech = function(req, res) {
+  console.log("@@ inside add function");
+  var new_tech = new TechRecords(req.body);
+  console.log("new tech info"+new_tech);
+  new_tech.save(function(err, newTech) {
+    if (err)
+      res.send(err);
+
+    res.json(newTech);
+  });
+};
+
+
+
 
 console.log("@@@ inside Controller");
 //console.log(TechContacts.count());
@@ -16,16 +48,3 @@ console.log(TechContacts.modelName);
 console.log(TechContacts.prototype);
 console.log(TechContacts.schema);
 console.log(TechContacts.toString()); */
-
-exports.techContactsList = function(req, res) {
-  console.log("@@@ 111 inside methods to get list of techs");
-  TechContacts.find({}, function(err, techList) {
-    if (err)
-      res.send(err);
-
-      console.log("@@@222 - inside methods to get list of techs");
-      console.log(techList);
-    res.json(techList);
-  });
-};
-

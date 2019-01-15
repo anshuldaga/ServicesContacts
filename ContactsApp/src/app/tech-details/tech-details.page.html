@@ -1,81 +1,75 @@
 <ion-header align-items-center>
-  <ion-toolbar >
-    <ion-title  class="transparent bold">Technician Details</ion-title>
+  <ion-toolbar>
+    <ion-title class="transparent bold">Technician Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content>
 
-  <!--<br/> {{techDetails | json}}-->
-
-  <ion-grid class="grid-full">
-
-   <ion-row>
-     <ion-col text-center class="bottomborder capitalize bold" >
-       {{techDetails.name}}
-     </ion-col>
-   </ion-row>
-  
-   <ion-row item-height="5" style="height: 100%" class="bottomborder">
-      
-      <ion-col size = "3" text-center class = "leftborder transparent" >
-        <br/>
-        <br/>
-          Role: <br/>
-          Phone #: <br/>
-          Email:   <br/>
-
-      </ion-col>
-
-      <ion-col text-left size ="4"class="rightborder transparent" >
-        <br/>
-        <br/>
-        {{techDetails.role}} <br/>
-        <a href="tel:{{techDetails.phone}}">{{techDetails.phone}}</a> <br/>
-        <a href="mailto:{{techDetails.mail}}?Subject=Technician%20Inquiry" target="_top">{{techDetails.mail}}</a>
-        <br/>
-
-      </ion-col>  
-    
-        
-      <ion-col size = "5" class="grid" class="rightborder container">
-        <ion-img src = "http://en.anti-age-magazine.com/wp-content/uploads/2016/03/merz-homme-web.png"> </ion-img>
-      </ion-col>
-      
-    </ion-row>
-
-<br/>
-
-    <ion-row>
-      <ion-col>
-        <ion-card class = "border transparent">
-        Services:
-        {{techDetails.skills}} <br/>
-        Placeholder skill <br/>
-        Placeholder skill <br/>
-        Placeholder skill <br/>
-        Placeholder skill <br/>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-
-<br/>
-<br/>
+  <ion-card class="border transparent">
+    <ion-grid>
+      <ion-row >
+        <ion-col col-8 class="grid-full">
+          <ion-grid>
+            <ion-row class="grid-full">
+              <ion-col text-center class="capitalize bold">
+                {{techDetails.name}}
+              </ion-col>
+            </ion-row>
+            <!-- <ion-row style="height: 100%" class="grid-full">
+              <ion-col text-left class=" transparent">
+                Role:
+              </ion-col>
+              <ion-col text-left class=" transparent">
+                {{techDetails.role}}
+              </ion-col>
+            </ion-row> -->
+            <ion-row style="height: 100%" class="grid-full">
+              <ion-col text-left class=" transparent">
+                Phone #:
+              </ion-col>
+              <ion-col text-left class=" transparent">
+                <a href="tel:{{techDetails.cell}}">{{techDetails.cell}}</a>
+              </ion-col>
+            </ion-row>
+            <ion-row style="height: 100%" class="grid-full">
+              <ion-col style="height: 100%" text-left class=" transparent">
+                Email:
+              </ion-col>
+              <ion-col text-left>
+                <a href="mailto:{{techDetails.email}}?Subject=Technician%20Inquiry" target="_top">{{techDetails.email}}</a>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          
+        </ion-col>
+        <ion-col  class="grid-full">
+          <ion-grid>
+            <ion-row class="grid-full">
+              <ion-col text-left>
+                img place holder
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        bb
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
 
 
-    <ion-row>
-      <ion-col>
-        <ion-card class = "border transparent">
-        Referred by: <br/>
-        Placeholder reference <br/>
-        Placeholder reference <br/>
-        Placeholder reference <br/>
-        Placeholder reference
-        </ion-card>
-      </ion-col>
-    </ion-row>
+  <ion-card class="border transparent">
+    Services:
+    {{techDetails.skills}}
+  </ion-card>
+
+  <ion-card class="border transparent">
+    Referred by: <br />
+    Placeholder reference <br />
+    Placeholder reference <br />
+
+  </ion-card>
 
 
- </ion-grid>
 
 </ion-content>

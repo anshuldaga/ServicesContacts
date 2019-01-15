@@ -46,9 +46,10 @@ export class TechDetailsPage implements OnInit {
   ionViewWillEnter(){
      this.userId  = this.route.snapshot.paramMap.get('userId');
     console.log("got id from url is:"+this.userId);
-    let obs = this.http.get('http://localhost:8081/userDetails/' + this.userId);
+    let obs = this.http.get('http://192.168.1.208:3000/getTechDetails/' + this.userId);
        obs.subscribe((responseData)=> {this.parseResponse (responseData)});
     // this.todo = this.todoService.getTodo(todoId);
+    
   }
 
 
