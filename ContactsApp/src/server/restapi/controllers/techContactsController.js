@@ -25,12 +25,15 @@ exports.getTechDetails = function(req, res) {
   });
 };
 
-exports.add = function(req, res) {
-  var new_product = new TechRecords (req.body);
-  new_product.save(function(err, product) {
+exports.addTech = function(req, res) {
+  console.log("@@ inside add function");
+  var new_tech = new TechRecords(req.body);
+  console.log("new tech info"+new_tech);
+  new_tech.save(function(err, newTech) {
     if (err)
       res.send(err);
-    res.json(product);
+
+    res.json(newTech);
   });
 };
 

@@ -15,7 +15,6 @@ app.get('/', function(req, res, next) {
   // Handle the get for this route
   console.log("XXX in CORS get method ");
 });
-
 app.post('/', function(req, res, next) {
  // Handle the post for this route
  console.log("YYY in CORS post method ");
@@ -27,6 +26,9 @@ app.post('/', function(req, res, next) {
         .get(techContacts.getTechList);
     app.route('/getTechDetails/:techID')
         .get(techContacts.getTechDetails);
+    app.route('/addTech')
+        .post(techContacts.addTech);
+        
 
     /* app.route('/getTestList')
         .get(techContacts.getTestList);
