@@ -19,7 +19,7 @@ export class ContactListPagePage implements OnInit {
 
   ngOnInit() {
 //8081 accessing second server that has the backend code which is accessing a specific service (listUsers)
-    let obs = this.http.get('http://192.168.1.208:3000/getTechList');
+    let obs = this.http.get('http://192.168.0.133:3000/getTechList');
         obs.subscribe((responseData)=> {this.parseResponse (responseData)});
         //parseResponse because it is properly formated json file
 
