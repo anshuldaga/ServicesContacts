@@ -38,6 +38,17 @@ exports.addTech = function(req, res) {
 };
 
 
+exports.searchTechBySkills = function(req, res) {
+  
+  var techID = req.params.techID;
+  
+  TechRecords.find({skills: /Electrician/i}, function(err, techlistAsperSkills) {
+    if (err)
+      res.send(err);
+
+    res.json(techlistAsperSkills);
+  });
+};
 
 
 console.log("@@@ inside Controller");
