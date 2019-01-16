@@ -1,9 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>tech-search</ion-title>
+    <ion-title>Technician Search</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  In Tech Search Page.. 
+  <ion-item>
+    <ion-label>Select Skill</ion-label>
+    <ion-select value="brown" ok-text="Okay" cancel-text="Dismiss">
+      <ion-select-option value="Plumbing">Plumbing</ion-select-option>
+      <ion-select-option value="Polishing">Polishing</ion-select-option>
+      <ion-select-option value="Electrician">Electrician</ion-select-option>
+      <ion-select-option value="red">Red</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-list style="padding-bottom: 0">
+    <ion-item [href]="'/tech-details/' + tech._id" detail="true" *ngFor="let tech of techList">
+      <ion-card style="width: 100%; padding: 1">
+        <ion-card-header style="padding-left: 2; padding-bottom: 0">
+          <mark><b>{{tech.name}}</b></mark>
+        </ion-card-header>
+        <ion-card-content style="padding-left: 3; padding-top: 0">
+          {{tech.skills}} <br />
+          {{tech.location}} <br />
+          <!--                     {{tech.cell}} -->
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
 </ion-content>

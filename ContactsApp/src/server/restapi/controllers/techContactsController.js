@@ -42,7 +42,7 @@ exports.searchTechBySkills = function(req, res) {
   
   var techID = req.params.techID;
   
-  TechRecords.find({skills: /Electrician/i}, function(err, techlistAsperSkills) {
+  TechRecords.find({skills: /Plumbing/i}, function(err, techlistAsperSkills) {
     if (err)
       res.send(err);
 
