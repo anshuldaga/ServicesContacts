@@ -42,14 +42,27 @@ exports.searchTechBySkills = function(req, res) {
   
   var skillSet = req.params.skillSet;
   console.log("@@ selected skill set:"+skillSet)
-  
-  //TechRecords.find({skills: /Plumbing/i}, function(err, techlistAsperSkills) {
-  TechRecords.find({skills:{'$regex' : skillSet, '$options' : 'i'}}, function(err, techlistAsperSkills) {
-    if (err)
-      res.send(err);
 
-    res.json(techlistAsperSkills);
-  });
+  if(skillSet === "All")
+  {
+
+    TechRecords.find({}, function(err, techListAll) {
+      if (err)
+        res.send(err);
+  
+      res.json(techListAll);
+    });
+  }
+  else{
+    //TechRecords.find({skills: /Plumbing/i}, function(err, techlistAsperSkills) {
+    TechRecords.find({skills:{'$regex' : skillSet, '$options' : 'i'}}, function(err, techlistAsperSkills) {
+      if (err)
+        res.send(err);
+
+      res.json(techlistAsperSkills);
+    });
+  
+  }
 };
 
 
