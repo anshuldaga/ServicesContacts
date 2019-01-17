@@ -12,10 +12,16 @@ export class TechSearchPage implements OnInit {
   private techList: Array<any> = [];
   constructor(private http: HttpClient) { }
 
+  private skillSet : string;
+  getSkilledTechlist(){
+    console.log("@@@ selected skill set:"+ this.skillSet);
+    
+     let obs = this.http.get('http://192.168.1.208:3000/searchTechBySkills/'+this.skillSet);
+     obs.subscribe((responseData) => { this.parseResponse(responseData) });
+  }
+
   ngOnInit() {
-    //8081 accessing second server that has the backend code which is accessing a specific service (listUsers)
-    let obs = this.http.get('http://192.168.1.208:3000/searchTechBySkills');
-    obs.subscribe((responseData) => { this.parseResponse(responseData) });
+   
   }
 
   parseResponse(responseData: any) {

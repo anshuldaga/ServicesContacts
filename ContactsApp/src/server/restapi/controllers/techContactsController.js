@@ -40,9 +40,11 @@ exports.addTech = function(req, res) {
 
 exports.searchTechBySkills = function(req, res) {
   
-  var techID = req.params.techID;
+  var skillSet = req.params.skillSet;
+  console.log("@@ selected skill set:"+skillSet)
   
-  TechRecords.find({skills: /Plumbing/i}, function(err, techlistAsperSkills) {
+  //TechRecords.find({skills: /Plumbing/i}, function(err, techlistAsperSkills) {
+  TechRecords.find({skills:{'$regex' : skillSet, '$options' : 'i'}}, function(err, techlistAsperSkills) {
     if (err)
       res.send(err);
 

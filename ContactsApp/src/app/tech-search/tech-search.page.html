@@ -7,7 +7,7 @@
 <ion-content padding>
   <ion-item>
     <ion-label>Select Skill</ion-label>
-    <ion-select value="brown" ok-text="Okay" cancel-text="Dismiss">
+    <ion-select [(ngModel)]="skillSet" (ionChange)="getSkilledTechlist()" ok-text="Okay" cancel-text="Dismiss">
       <ion-select-option value="Plumbing">Plumbing</ion-select-option>
       <ion-select-option value="Polishing">Polishing</ion-select-option>
       <ion-select-option value="Electrician">Electrician</ion-select-option>

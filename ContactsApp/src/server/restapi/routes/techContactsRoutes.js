@@ -28,7 +28,9 @@ app.post('/', function(req, res, next) {
         .get(techContacts.getTechDetails);
     app.route('/addTech')
         .post(techContacts.addTech);
-       app.route('/searchTechBySkills')
+    app.route('/searchTechBySkills')
+        .get(techContacts.searchTechBySkills);
+    app.route('/searchTechBySkills/:skillSet')
         .get(techContacts.searchTechBySkills);
     
         
