@@ -1,26 +1,13 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-TechList = mongoose.model('techlist');
-
-var mongoose = require('mongoose'),
-TechDetails = mongoose.model('techDetails');
-
-/* var mongoose = require('mongoose'),
-TestList = mongoose.model('test');
-
-var mongoose = require('mongoose'),
-ProductList = mongoose.model('products'); */
-
+TechRecords = mongoose.model('techRecords');
 
 exports.getTechList = function(req, res) {
-  console.log("@@@ 111 inside getTechList methods");
-  TechList.find({}, function(err, techList) {
+  TechRecords.find({}, function(err, techList) {
     if (err)
       res.send(err);
 
-      console.log("@@@222 - inside methods to get list of techs");
-      console.log(techList);
     res.json(techList);
   });
 };
@@ -29,42 +16,55 @@ exports.getTechList = function(req, res) {
 exports.getTechDetails = function(req, res) {
   
   var techID = req.params.techID;
-//  var techID2 = req.query.userID; --- not working 
-  console.log("@@@ 111 inside getTechDetails methods. techID:"+ techID );
-  TechDetails.findById(mongoose.Types.ObjectId(techID), function(err, techDetails) {
+  
+  TechRecords.findById(mongoose.Types.ObjectId(techID), function(err, techDetails) {
     if (err)
       res.send(err);
 
-      console.log("@@@222 - inside methods to get list of techs");
-      console.log(techDetails);
     res.json(techDetails);
   });
 };
 
-
-/* exports.getTestList = function(req, res) {
-  console.log("@@@ 111 inside methods to get list of techs");
-  TestList.find({}, function(err, testList) {
+exports.addTech = function(req, res) {
+  console.log("@@ inside add function");
+  var new_tech = new TechRecords(req.body);
+  console.log("new tech info"+new_tech);
+  new_tech.save(function(err, newTech) {
     if (err)
       res.send(err);
 
-      console.log("@@@222 - inside methods to get list of techs");
-      console.log(testList);
-    res.json(testList);
+    res.json(newTech);
   });
 };
 
-exports.getProdList = function(req, res) {
-  console.log("@@@ 111 inside getTechList methods");
-  ProductList.find({}, function(err, techList) {
-    if (err)
-      res.send(err);
 
-      console.log("@@@222 - inside methods to get list of techs");
-      console.log(techList);
-    res.json(techList);
-  });
-}; */
+exports.searchTechBySkills = function(req, res) {
+  
+  var skillSet = req.params.skillSet;
+  console.log("@@ selected skill set:"+skillSet)
+
+  if(skillSet === "All")
+  {
+
+    TechRecords.find({}, function(err, techListAll) {
+      if (err)
+        res.send(err);
+  
+      res.json(techListAll);
+    });
+  }
+  else{
+    //TechRecords.find({skills: /Plumbing/i}, function(err, techlistAsperSkills) {
+    TechRecords.find({skills:{'$regex' : skillSet, '$options' : 'i'}}, function(err, techlistAsperSkills) {
+      if (err)
+        res.send(err);
+
+      res.json(techlistAsperSkills);
+    });
+  
+  }
+};
+
 
 console.log("@@@ inside Controller");
 //console.log(TechContacts.count());

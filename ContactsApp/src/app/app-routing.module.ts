@@ -8,6 +8,10 @@ const routes: Routes = [
   { path: 'temp', loadChildren: './temp/temp.module#TempPageModule' },
   //{ path: 'techProfile/:_id', loadChildren: './tech-profile/tech-profile.module#TechProfilePageModule' },
   { path: 'tech-details/:userId', loadChildren: './tech-details/tech-details.module#TechDetailsPageModule' },
+  { path: 'tech_add', loadChildren: './tech-add/tech-add.module#TechAddPageModule' },
+  { path: 'tech-search', loadChildren: './tech-search/tech-search.module#TechSearchPageModule' },
+  { path: 'tech-search/:skillSet', loadChildren: './tech-search/tech-search.module#TechSearchPageModule' },
+
 
 ];
 
