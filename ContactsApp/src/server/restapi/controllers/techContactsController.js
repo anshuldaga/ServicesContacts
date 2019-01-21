@@ -38,6 +38,32 @@ exports.addTech = function(req, res) {
 };
 
 
+exports.searchTechBySkills = function(req, res) {
+  
+  var skillSet = req.params.skillSet;
+  console.log("@@ selected skill set:"+skillSet)
+
+  if(skillSet === "All")
+  {
+
+    TechRecords.find({}, function(err, techListAll) {
+      if (err)
+        res.send(err);
+  
+      res.json(techListAll);
+    });
+  }
+  else{
+    //TechRecords.find({skills: /Plumbing/i}, function(err, techlistAsperSkills) {
+    TechRecords.find({skills:{'$regex' : skillSet, '$options' : 'i'}}, function(err, techlistAsperSkills) {
+      if (err)
+        res.send(err);
+
+      res.json(techlistAsperSkills);
+    });
+  
+  }
+};
 
 
 console.log("@@@ inside Controller");
