@@ -6,7 +6,8 @@ var techInfoSchema = new Schema({
   name: { type: String, Required:  'Tech name cannot be left blank.' },
   cell:    { type: String,     Required:  'Tech cell cannot be left blank.'},
   email:    { type: String,     Required:  'eamil  cannot be left blank.'},
-  location: { type: String,     Required:  'location  cannot be left blank.'}
+  location: { type: String,     Required:  'location  cannot be left blank.'},
+  skills: { type: String,     Required:  'skills  cannot be left blank.'}
 });
 
 /* Note: If we don't pass the collection name- by default it add 's' to model name
