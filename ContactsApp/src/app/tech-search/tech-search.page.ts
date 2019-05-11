@@ -16,7 +16,7 @@ export class TechSearchPage implements OnInit {
   getSkilledTechlist(){
     console.log("@@@ selected skill set:"+ this.skillSet);
     
-     let obs = this.http.get('http://192.168.1.208:3000/searchTechBySkills/'+this.skillSet);
+     let obs = this.http.get('http://localhost:3000/searchTechBySkills/'+this.skillSet);
      obs.subscribe((responseData) => { this.parseResponse(responseData) });
   }
 
